@@ -4,6 +4,9 @@ import "@matterlabs/hardhat-zksync-deploy";
 import "@matterlabs/hardhat-zksync-solc";
 
 import "@matterlabs/hardhat-zksync-verify";
+// load env file
+import dotenv from "dotenv";
+dotenv.config();
 
 // dynamically changes endpoints for local tests
 const zkSyncTestnet =
@@ -14,8 +17,9 @@ const zkSyncTestnet =
         zksync: true,
       }
     : {
-        url: "https://zksync2-testnet.zksync.dev",
-        ethNetwork: "goerli",
+        //url: "https://zksync2-testnet.zksync.dev",
+        url: "https://testnet.era.zksync.dev",
+        ethNetwork: "https://goerli.infura.io/v3/"+process.env.INFURA_API_KEY,
         zksync: true,
         // contract verification endpoint
         verifyURL:
