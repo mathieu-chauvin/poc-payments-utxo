@@ -22,7 +22,7 @@ export default async function (hre: HardhatRuntimeEnvironment) {
 
   // Create deployer object and load the artifact of the contract you want to deploy.
   const deployer = new Deployer(hre, wallet);
-  const artifact = await deployer.loadArtifact("Storage");
+  const artifact = await deployer.loadArtifact("Groth16Verifier");
 
   // Estimate contract deployment fee
   //const greeting = "Hi there!";
